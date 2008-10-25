@@ -9,7 +9,7 @@ class WasChangedTest < Test::Unit::TestCase
 
   def test_was_changed_is_false_if_no_changes_were_made
     @post.save
-    assert_false @post.was_changed?
+    assert !@post.was_changed?
   end
 
   def test_was_changed_is_true_if_changes_were_made
@@ -22,7 +22,7 @@ class WasChangedTest < Test::Unit::TestCase
     @post.title = "New Title"
     @post.save
     @post.save
-    assert_false @post.was_changed?
+    assert !@post.was_changed?
   end
 
   def test_attribute_changes_tracked
@@ -48,6 +48,13 @@ class WasChangedTest < Test::Unit::TestCase
     @post.title = "New Title"
     @post.save
     assert_equal @post.saved_changes, { 'title' => ["Title", "New Title"] }
+  end
+
+  def test_will_change
+    @post.title_will_change!
+    @post.title.upcase!
+    @post.save
+    assert_equal @post.title_before_save_change, ["Title", "TITLE"]
   end
 
   def teardown
