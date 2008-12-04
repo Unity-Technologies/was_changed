@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name     = "was_changed"
-  s.version  = "0.1.0"
+  s.version  = "0.1.1"
   s.date     = "2008-10-25"
   s.summary  = "Dirty objects but more persistant"
   s.email    = "paul.bowsher@multiplay.co.uk"

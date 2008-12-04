@@ -1,1 +1,1 @@
-ActiveRecord::Base.send(:include, Multiplay::WasChanged)
+require File.dirname(__FILE__) + "/rails/init"
