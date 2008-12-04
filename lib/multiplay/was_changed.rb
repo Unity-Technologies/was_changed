@@ -36,3 +36,5 @@ module Multiplay
 
   end
 end
+
+ActiveRecord::Base.send(:include, Multiplay::WasChanged)
