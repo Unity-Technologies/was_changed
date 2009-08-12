@@ -7,7 +7,7 @@ module Multiplay
     end
 
     def store_changes
-      @was_changed_attributes = @changed_attributes.clone
+      @was_changed_attributes = @changed_attributes.nil? ? {} : @changed_attributes.clone
     end
     
     def was_changed?
